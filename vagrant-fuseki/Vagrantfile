@@ -1,0 +1,12 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/xenial64"
+    #config.vm.box = "debian/jessie64"
+    
+    # call installation script
+    config.vm.provision :shell, path: "bootstrap.sh"
+
+    #config.vm.synced_folder "/Users/ben/temp/playground/vagrant-fuseki/config", "/vagrant/fuseki-config"
+
+    config.vm.network "forwarded_port", guest: 3030, host: 3030
+
+end
