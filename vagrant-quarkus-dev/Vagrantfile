@@ -1,22 +1,20 @@
 Vagrant.configure("2") do |config|
-    config.vm.box = "debian/buster64"        
+    #config.vm.box = "archlinux/archlinux"
+    config.vm.box = "debian/buster64"
+  
     config.vm.provision :shell, path: "bootstrap.sh"
 
-    config.vm.provider "virtualbox" do |v|
-        v.memory = 2048
-        v.cpus = 2
-    end
+    if ENV['FIRST_RUN'] == 'true'
+        config.vbguest.auto_update = false
+        config.vm.synced_folder ".", "/vagrant", disabled: true
+      else
+        config.vm.synced_folder ".", "/vagrant", create: true, type: "virtualbox"
+        config.vm.synced_folder "/Users/ben/GitHub/leanix-adapter", "/vagrant/leanix-adapter"
+        config.vm.synced_folder "/Users/ben/GitHub/emma", "/vagrant/emma"
 
-    config.vm.synced_folder "/Users/ben/temp/playground/docker_temp", "/vagrant/docker_temp"
-    config.vm.synced_folder "/Users/ben/GitHub/ddns-updater-service", "/vagrant/ddns-updater-service"
-    config.vm.synced_folder "/Users/ben/GitHub/trend-management", "/vagrant/trend-management"
-    config.vm.synced_folder "/Users/ben/GitHub/lambda-quarkus-react", "/vagrant/lambda-quarkus-react"
-    config.vm.synced_folder "/Users/ben/GitHub/emma", "/vagrant/emma"
-    config.vm.synced_folder "/Users/ben/temp/_vagrant_files", "/vagrant/shared_files"
+        #config.vm.synced_folder "./www", "/var/www", create: true, type: "virtualbox", owner: "www-data", group: "www-data"
+      end
 
-
-    config.vm.synced_folder "/Users/ben/GitHub/leanix-adapter", "/vagrant/leanix-adapter"
-    
     config.vm.network "forwarded_port", guest: 8080, host: 9000
     config.vm.network "forwarded_port", guest: 9000, host: 9002
     config.vm.network "forwarded_port", guest: 8000, host: 9001

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export LANGUAGE=en_US.UTF-8; export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; locale-gen en_US.UTF-8
+
 sudo apt-get update
 sudo apt upgrade -y
 
@@ -8,7 +10,8 @@ sudo apt-get -y install software-properties-common maven gnupg
 wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
 add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
 sudo apt update
-apt install -y adoptopenjdk-11-hotspot
+#apt-get install adoptopenjdk-8-hotspot
+apt install adoptopenjdk-11-hotspot
 
 
 #apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common -y
