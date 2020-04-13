@@ -1,9 +1,0 @@
-
-/output
-/photo-booth
-/test
-/.vagrant
-
-# misc
-.DS_Store
-*.log
