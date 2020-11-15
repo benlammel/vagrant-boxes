@@ -1,10 +1,12 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "debian/buster64"
+  #config.vm.box = "debian/buster64"
+  config.vm.box = "ubuntu/hirsute64"
 
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.network "private_network", ip: "10.45.42.10"
 
-  config.vm.synced_folder "/Users/ben/GitHub/emma-webapp-dev", "/vagrant/emma-webapp-dev"
+  #config.vm.synced_folder "/Users/ben/GitHub", "/vagrant/github", disabled: false, type:"virtualbox"
+  config.vm.synced_folder "/Users/ben/GitHub", "/vagrant/github"
 
   config.vm.network "forwarded_port", guest: 8080, host: 9000
   config.vm.network "forwarded_port", guest: 9000, host: 9002
