@@ -8,7 +8,7 @@ apt upgrade -y
 apt-get -y install openjdk-11-jdk
 
 #sudo -s
-#wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-3.16.0.tar.gz -O /opt/apache-fuseki.tar.gz
+#wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-3.17.0.tar.gz -O /opt/apache-fuseki.tar.gz
 #tar -xvzf /opt/apache-fuseki.tar.gz -C /opt/
 #mv /opt/apache-jena-fuseki* /opt/fuseki
 #mkdir /opt/fuseki/run/
