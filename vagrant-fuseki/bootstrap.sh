@@ -5,7 +5,7 @@ export LANGUAGE=en_US.UTF-8; export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8;
 apt update
 apt upgrade -y
 
-apt-get -y install ntp openjdk-11-jdk
+#apt-get -y install ntp openjdk-11-jdk
 
 #sudo -s
 #wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-4.0.0.tar.gz -O /opt/apache-fuseki.tar.gz
