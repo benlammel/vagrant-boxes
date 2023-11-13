@@ -1,0 +1,17 @@
+Vagrant.configure("2") do |config|
+  #config.vm.box = "debian/bullseye64"
+  #config.vm.box = "debian/bookworm64"
+  config.vm.box = "archlinux/archlinux"
+
+  
+  #config.vbguest.auto_update = false
+  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.network "private_network", ip: "10.45.42.20"
+
+  #config.vm.synced_folder "./config", "/opt/config", disabled: false
+  config.vm.synced_folder "./config", "/home/vagrant/run", disabled: false
+  config.vm.synced_folder "/Users/ben/github", "/vagrant/github"
+
+  config.vm.network "forwarded_port", guest: 3030, host: 3030
+
+end

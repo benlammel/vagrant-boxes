@@ -1,0 +1,11 @@
+
+.vagrant
+ubuntu-xenial-16.04-cloudimg-console.log
+config/run/
+config/databases
+config/system
+config/templates
+config/system_files
+config/configuration
+test
+
