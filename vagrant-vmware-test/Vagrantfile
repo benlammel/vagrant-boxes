@@ -1,0 +1,7 @@
+Vagrant.configure("2") do |config|
+  config.vm.provider :vmware_fusion do |vmware|
+    vmware.utility_certificate_path = "/Users/ben/github/vagrant-vmware-desktop/go_src/vagrant-vmware-utility/certificates"
+  end
+  #config.vm.box = "archlinux/archlinux"
+  config.vm.box = "bento/ubuntu-20.04-arm64"
+end

@@ -1,0 +1,10 @@
+Vagrant.configure("2") do |config|
+  config.vm.provider :utm do |u|
+    #config.vm.box = "ubuntu/xenial64"
+    #u.utm_file_url = "https://github.com/naveenrajm7/utm-box/releases/download/debian-12.6/debian-12.6.0-arm64-netinst-vagrant.zip"
+    #u.utm_file_url = "https://github.com/naveenrajm7/utm-box/releases/download/debian-10/deb10_vagrant_utm.zip"
+    u.utm_file_url = "https://github.com/naveenrajm7/utm-box/releases/download/debian-11/debian_vagrant_utm.zip"
+
+    config.vm.synced_folder "/Users/ben/github/", "/vagrant/github"
+  end
+end

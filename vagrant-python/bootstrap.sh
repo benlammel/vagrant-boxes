@@ -2,7 +2,9 @@
 
 sudo apt-get update
 sudo apt upgrade -y
-sudo apt-get -y install openjdk-21-jdk maven
+sudo apt-get -y install python3 python3-pip python-is-python3
+
+
 
 
 #sudo timedatectl set-timezone Europe/Berlin
@@ -15,6 +17,5 @@ sudo apt-get -y install openjdk-21-jdk maven
 #sudo add-apt-repository ppa:openjdk-r/ppa -y
 
 
-#cd /vagrant/github/emma/webservice/
-#./mvnw install
-#./mvnw compile quarkus:dev -pl meta-schema
+#wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh
+#bash Miniconda3-latest-Linux-aarch64.sh 
