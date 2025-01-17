@@ -2,7 +2,7 @@
 
 sudo apt-get update
 sudo apt upgrade -y
-sudo apt-get -y install openjdk-21-jdk maven
+#sudo apt-get -y install openjdk-21-jdk maven
 
 
 #sudo timedatectl set-timezone Europe/Berlin
